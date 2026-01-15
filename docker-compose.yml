@@ -1,0 +1,40 @@
+networks:
+  inema-network:
+    driver: bridge
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        APP: app/${PROJECT_NAME}
+    container_name: ${PROJECT_NAME}-app
+    volumes:
+      - ./app/${PROJECT_NAME}:/var/www/html
+    networks:
+      - inema-network
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+
+  nginx:
+    image: nginx:alpine
+    container_name: ${PROJECT_NAME}-nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app/${PROJECT_NAME}:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - inema-network
+    depends_on:
+      - app
+
+volumes:
+  postgres_data:
+  minio_data:
