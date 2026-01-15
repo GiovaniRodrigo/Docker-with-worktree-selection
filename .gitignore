@@ -11,3 +11,4 @@ a.out
 *.orig
 build_src/
 app/*
+nginx/default.conf
