@@ -1,7 +1,7 @@
 # Dockerized Application with Worktree Selection
 
 ## Overview
-This project provides a boilerplate for a Dockerized application, designed to facilitate development with multiple worktrees. It integrates Docker for containerization, `docker-compose` for multi-container orchestration, and a `Makefile` for simplifying common development tasks. The `app/` directory is intended to house the main application code, which can be organized into sub-modules like `auditoriav2` and `main`.
+This project provides a boilerplate for a Dockerized application, designed to facilitate development with multiple worktrees. It integrates Docker for containerization, `docker-compose` for multi-container orchestration, and a `Makefile` for simplifying common development tasks. The `app/` directory is intended to house the main application code, which can be organized into sub-modules like `feature/1` and `main`.
 
 ## Getting Started
 
