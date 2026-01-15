@@ -13,7 +13,7 @@ services:
     volumes:
       - ./app/${PROJECT_NAME}:/var/www/html
     networks:
-      - inema-network
+      - network
     depends_on:
       postgres:
         condition: service_healthy
@@ -31,7 +31,7 @@ services:
       - ./app/${PROJECT_NAME}:/var/www/html
       - ./config_files/default.conf:/etc/nginx/conf.d/default.conf
     networks:
-      - inema-network
+      - network
     depends_on:
       - app
 
