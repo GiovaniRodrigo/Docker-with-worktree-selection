@@ -35,7 +35,7 @@ The `select` command allows you to interactively choose a project from the `app/
     ```bash
     make CMD="up" select
     ```
-    This will list available projects (e.g., `auditoriav2`, `main`, `feature`, `hotfix`, `test`) and prompt you to choose one. Once selected, it will run `docker compose -f docker-compose.yml -f app/<selected_project>/docker-compose.yml up -d`.
+    This will list available projects (e.g., `feature/1`, `main`, `feature`, `hotfix`, `test`) and prompt you to choose one. Once selected, it will run `docker compose -f docker-compose.yml -f app/<selected_project>/docker-compose.yml up -d`.
 
     Other examples using `make select` with different `CMD` values:
     ```bash
