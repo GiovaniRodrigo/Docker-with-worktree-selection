@@ -29,5 +29,5 @@ RUN composer install --ignore-platform-req=ext-intl --ignore-platform-req=ext-zi
 # Permissões
 RUN chown -R www-data:www-data /var/www/html
 
-EXPOSE 9000
+EXPOSE 9001
 CMD ["php-fpm"]
